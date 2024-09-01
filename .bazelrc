@@ -1,0 +1,10 @@
+build --cxxopt='-std=c++2a'
+
+build:gperf --linkopt='-ltcmalloc'
+
+build:asan --cxxopt='-std=c++2a'
+build:asan --copt='-fsanitize=address'
+build:asan --cxxopt='-fsanitize=address'
+build:asan --linkopt='-fsanitize=address'
+
+build:opt --copt=-O3

@@ -1,0 +1,493 @@
+{
+    "annotations": {
+        "EntryPoint->elem": {
+            "0": {
+                "action": "CreateScope",
+                "args": {
+                    "scope_name": "scope_{@id}"
+                },
+                "ast_context": []
+            }
+        },
+        "ProgramRule->elem": {
+            "0": {
+                "action": "DefineSymbol",
+                "args": {
+                    "type": "data_to_save",
+                    "name": "save"
+                },
+                "ast_context": []
+            }
+        },
+        "SaveRule->elem": {
+            "0": {
+                "action": "UseSymbol",
+                "args": {
+                    "type": "data_to_save"
+                },
+                "ast_context": []
+            }
+        },
+        "ZAddRule->elem,ZStoreRule1->dest,ZInterStore3->dest,ZRangeStore1->dest,ZUnionStoreRule1->dest": {
+            "0": {
+                "action": "DefineSymbol",
+                "args": {
+                    "type": "sorted_set_key"
+                },
+                "ast_context": []
+            }
+        },
+        "MultiRule1->elem": {
+            "0": {
+                "action": "DefineSymbol",
+                "args": {
+                    "type": "multi_start",
+                    "name": "exec"
+                },
+                "ast_context": []
+            }
+        },
+        "ExecRule1->elem": {
+            "0": {
+                "action": "InvalidateSymbol",
+                "args": {
+                    "type": "multi_start"
+                },
+                "ast_context": []
+            }
+        },
+        "ZCardRule->elem,ZCountRule->elem,ZDiffRule1->elem,ZDiffRule2->elem,ZStoreRule2->elem,ZStoreRule3->elem,ZIncrBy->elem,ZInter1->elem,ZInter2->elem,ZInterCard1->elem,ZInterCard2->elem,ZInterStore1->elem,ZInterStore2->elem,ZLexCount->elem,ZMPop1->elem,ZMPop2->elem,ZMScore->elem,ZPopMax->elem,ZPopMin->elem,ZRandMember->elem,ZRange->elem,ZRangeByLex->elem,ZRangeByScore->elem,ZRangeStore2->elem,ZRankRule->elem,ZRemRule->elem,ZRemRangeByLex->elem,ZRemRangeByRank->elem,ZRemRangeByScore->elem,ZRevRange->elem,ZRevRangeByLex->elem,ZRevRangeByScore->elem,ZRevRank->elemkey,ZScanRule->elem,ZScoreRule->elem,ZUnionRule1->elem,ZUnionRule2->elem,ZUnionStoreRule2->elem,ZUnionStoreRule3->elem,BZMPopRule1->elem,BZMPopRule2->elem,BZPopMaxRule1->elem,BZPopMaxRule2->elem,BZPopMinRule1->elem,BZPopMinRule2->elem": {
+            "0": {
+                "action": "UseSymbol",
+                "args": {
+                    "type": "sorted_set_key"
+                },
+                "ast_context": []
+            }
+        },
+        "ZAddRule2->elem,ZAddRule3->elem": {
+            "0": {
+                "action": "DefineSymbol",
+                "args": {
+                    "type": "zadd_member"
+                },
+                "ast_context": []
+            }
+        },
+        "ZRevRank->elemmember": {
+            "0": {
+                "action": "UseSymbol",
+                "args": {
+                    "type": "zadd_member"
+                },
+                "ast_context": []
+            }
+        },
+        "BitopRule0->elem": {
+            "1": {
+                "action": "AlterOrder",
+                "args": {
+                    "after": "{.parent.rsib(1)@id}_{.parent.rsib(2)@id}"
+                },
+                "ast_context": []
+            }
+        },
+        "CopyRule1->elem1": {
+            "0": {
+                "action": "UseSymbol",
+                "args": {
+                    "type_block": ["multi_start", "data_to_save"]
+                },
+                "ast_context": []
+            }
+        },
+        "CopyRule1->elem2": {
+            "0": {
+                "action": "DefineSymbol",
+                "args": {
+                    "type": "{.lsib(1)@sym_use_type}"
+                },
+                "ast_context": []
+            }
+        },
+        "BitPosRule1->elem,BitopRule1->elem,BitopRule2->elem,BitfieldRule1->elem": {
+            "0": {
+                "action": "UseSymbol",
+                "args": {
+                    "type": [
+                        "str_key",
+                        "str_key_type_num"
+                    ]
+                },
+                "ast_context": []
+            }
+        },
+        "XAckRule1->elem1,XAutoClaimRule1->elem,XClaimRule1->elem,XGroupCreateRule1->elem,XGroupCreateconsumerRule1->elem1,XGroupDelconsumerRule1->elem1,XGroupDestroyRule1->elem,XGroupSetidRule1->elem1,XInfoConsumersRule1->elem1,XInfoGroupsRule1->elem,XInfoStreamRule1->elem,XLenRule1->elem,XPendingRule1->elem1,XRangeRule1->elem,XReadRule1->elem,XReadRule2->elem,XReadGroupRule1->elem,XReadGroupRule2->elem,XRevRangeRule1->elem,XTrimRule1->elem": {
+            "0": {
+                "action": "UseSymbol",
+                "args": {
+                    "type": "stream_key"
+                },
+                "ast_context": []
+            }
+        },
+        "XGroupCreateconsumerRule1->elem2,XGroupDelconsumerRule1->elem2,XInfoConsumersRule1->elem2,XPendingRule1->elem2,XAckRule1->elem2,XGroupSetidRule1->elem2": {
+            "0": {
+                "action": "UseSymbol",
+                "args": {
+                    "type": "xgroup_groupname_of_key_{.lsib(1)@text}"
+                },
+                "ast_context": []
+            }
+        },
+        "XDelRule1->elem": {
+            "0": {
+                "action": "InvalidateSymbol",
+                "args": {
+                    "type": "stream_key"
+                },
+                "ast_context": []
+            }
+        },
+        "XAddRule1->elem": {
+            "0": {
+                "action": "DefineSymbol",
+                "args": {
+                    "type": "stream_key"
+                },
+                "ast_context": []
+            }
+        },
+        "DelRule1->elem,DelRule2->elem": {
+            "0": {
+                "action": "InvalidateSymbol",
+                "args": {
+                    "type": [
+                        "sorted_set_key",
+                        "stream_key",
+                        "str_key",
+                        "list_key",
+                        "set_key",
+                        "hash_key",
+                        "str_key_type_num"
+                    ]
+                },
+                "ast_context": []
+            }
+        },
+        "HSetField1->elem,HSetField2->elem,HSetNXField->elem": {
+            "0": {
+                "action": "DefineSymbol",
+                "args": {
+                    "type": "##hset_field_type_resolver",
+                    "custom_types": ["hset_key_?"]
+                },
+                "ast_context": []
+            }
+        },
+        "HIncrByField->elem,HIncrByFloatField->elem": {
+            "0": {
+                "action": "UseSymbol",
+                "args": {
+                    "type": "##hincrby_field_type_resolver",
+                    "custom_types": [
+                        "hset_key_?_numtype"
+                    ]
+                },
+                "ast_context": []
+            }
+        },
+        "HMGetField1->elem,HMGetField2->elem": {
+            "0": {
+                "action": "UseSymbol",
+                "args": {
+                    "type": "##hmget_field_type_resolver",
+                    "custom_types": [
+                        "hset_key_?"
+                    ]
+                },
+                "ast_context": []
+            }
+        },
+        "HGetField->elem,HSetLenField->elem": {
+            "0": {
+                "action": "UseSymbol",
+                "args": {
+                    "type": "##hget_field_type_resolver",
+                    "custom_types": [
+                        "hset_key_?"
+                    ]
+                },
+                "ast_context": []
+            }
+        },
+        "HSetRule1->elem,HMSetRule1->elem,HSetNXRule1->elem": {
+            "0": {
+                "action": "DefineSymbol",
+                "args": {
+                    "type": "hash_key"
+                },
+                "ast_context": []
+            }
+        },
+        "HExistsRule1->elem,HGetRule1->elem,HGetAllRule1->elem,HIncrByRule1->elem,HIncrByFloatRule1->elem,HKeysRule1->elem,HLenRule1->elem,HMGetRule1->elem,HRandFieldRule1->elem,HScanRule1->elem,HStrLenRule1->elem,HValsRule1->elem": {
+            "0": {
+                "action": "UseSymbol",
+                "args": {
+                    "type": "hash_key"
+                },
+                "ast_context": []
+            }
+        },
+        "HDelRule1->elem": {
+            "0": {
+                "action": "InvalidateSymbol",
+                "args": {
+                    "type": "hash_key"
+                },
+                "ast_context": []
+            }
+        },
+        "SetRule1->elem,AppendRule1->elem": {
+            "0": {
+                "action": "DefineSymbol",
+                "args": {
+                    "type": "##str_key_type_resolver",
+                    "custom_types": ["str_key?"]
+                },
+                "ast_context": []
+            }
+        },
+        "MSetRule1->elem,MSetRule2->elem,MSetNxRule1->elem,MSetNxRule2->elem,PSetExRule1->elem,SetExRule1->elem,SetNxRule1->elem": {
+            "0": {
+                "action": "DefineSymbol",
+                "args": {
+                    "type": "str_key"
+                },
+                "ast_context": []
+            }
+        },
+        "GetDelRule1->elem": {
+            "0": {
+                "action": "InvalidateSymbol",
+                "args": {
+                    "type": "str_key"
+                },
+                "ast_context": []
+            }
+        },
+        "GeoSearchStoreRule1->elem,GeoAddRule1->elem": {
+            "0": {
+                "action": "DefineSymbol",
+                "args": {
+                    "type": "geo_key"
+                },
+                "ast_context": []
+            }
+        },
+        "GeoAddRuleMember1->elem": {
+            "0": {
+                "action": "DefineSymbol",
+                "args": {
+                    "type": "geo_member"
+                },
+                "ast_context": []
+            }
+        },
+        "GeoSearchStoreRule2->elem,GeoSearchRule1->elem,GeoRadiusRule1->elem,GeoPosRule1->elem,GeoDistRule1->elem,GeoHashRule1->elem": {
+            "0": {
+                "action": "UseSymbol",
+                "args": {
+                    "type": "geo_key"
+                },
+                "ast_context": []
+            }
+        },
+        "GeoSearchStoreRule3->elem,GeoSearchRule2->elem,GeoPosRule2->elem,GeoPosRule3->elem,GeoHashRule3->elem,GeoDistRule2->elem,GeoDistRule2->elem,GeoDistRule3->elem": {
+            "0": {
+                "action": "UseSymbol",
+                "args": {
+                    "type": "geo_member"
+                },
+                "ast_context": []
+            }
+        },
+        "GeoSearchStoreRule1->elem": {
+            "0": {
+                "action": "AlterOrder",
+                "args": {
+                    "after": "{.parent.rsib(1).child(0)@id}"
+                },
+                "ast_context": []
+            }
+        },
+        "ExpireRule1->elem,PExpireRule1->elem": {
+            "0": {
+                "action": "UseSymbol",
+                "args": {
+                    "type_block": ["multi_start", "data_to_save"]
+                },
+                "ast_context": []
+            }
+        },
+        "IncrByRule1->elem,IncrRule1->elem,DecrRule1->elem,DecrByRule1->elem,IncrByFloatRule1->elem": {
+            "0": {
+                "action": "UseSymbol",
+                "args": {
+                    "type": "str_key_type_num"
+                },
+                "ast_context": []
+            }
+        },
+        "SetBitRule1->elem,StrLenRule1->elem,SubStrRule1->elem,LCSRule1->elem,LCSRule2->elem,GetRangeRule1->elem,SetRangeRule1->elem": {
+            "0": {
+                "action": "UseSymbol",
+                "args": {
+                    "type": [
+                        "str_key",
+                        "str_key_type_num"
+                    ]
+                },
+                "ast_context": []
+            }
+        },
+        "GetRule1->elem,GetExRule1->elem,GetSetRule1->elem,MGetRule1->elem,MGetRule2->elem": {
+            "0": {
+                "action": "UseSymbol",
+                "args": {
+                    "type": [
+                        "str_key",
+                        "str_key_type_num"
+                    ]
+                },
+                "ast_context": []
+            }
+        },
+        "RPushRule1->elem,BlMoveRule2->elem,BRPopLPushRule2->elem,LMoveRule2->elem,LPushRule1->elem,RPopLPushRule2->elem": {
+            "0": {
+                "action": "DefineSymbol",
+                "args": {
+                    "type": "list_key"
+                },
+                "ast_context": []
+            }
+        },
+        "BlMoveRule1->elem,BLMPopRule1->elem,BLMPopRule2->elem,BLPopRule1->elem,BLPopRule2->elem,BRPopRule1->elem,BRPopRule2->elem,BRPopLPushRule1->elem,LIndexRule1->elem,LInsertRule1->elem,LLenRule1->elem,LMoveRule1->elem,LMPopRule1->elem,LMPopRule2->elem,LPopRule1->elem,LPosRule1->elem,LPushXRule1->elem,LRangeRule1->elem,LRemRule1->elem,LSetRule1->elem,LTrimRule1->elem,RPopRule1->elem,RPopLPushRule1->elem,RPushXRule1->elem": {
+            "0": {
+                "action": "UseSymbol",
+                "args": {
+                    "type": "list_key"
+                },
+                "ast_context": []
+            }
+        },
+        "SAddRule1->elem,SDiffStoreRule1->elem,SInterStoreRule1->elem,SMoveRule2->elem,SUnionStoreRule0->elem": {
+            "0": {
+                "action": "DefineSymbol",
+                "args": {
+                    "type": "set_key"
+                },
+                "ast_context": []
+            }
+        },
+        "SCardRule1->elem,SDiffRule1->elem,SDiffRule2->elem,SDiffStoreRule2->elem,SDiffStoreRule3->elem,SInterRule1->elem,SInterRule2->elem,SInterCardRule1->elem,SInterCardRule2->elem,SInterStoreRule2->elem,SInterStoreRule3->elem,SIsMemberRule1->elem,SMembersRule1->elem,SMIsMemberRule1->elem,SMoveRule1->elem,SPopRule1->elem,SRandMemberRule1->elem,SRemRule1->elem,SScanRule1->elem,SUnionRule1->elem,SUnionRule2->elem,SUnionStoreRule1->elem,SUnionStoreRule2->elem": {
+            "0": {
+                "action": "UseSymbol",
+                "args": {
+                    "type": "set_key"
+                },
+                "ast_context": []
+            }
+        },
+        "SortRule1->elem": {
+            "0": {
+                "action": "UseSymbol",
+                "args": {
+                    "type": [
+                        "list_key",
+                        "set_key",
+                        "sorted_set_key"
+                    ]
+                },
+                "ast_context": []
+            }
+        },
+        "DumpRule1->elem": {
+            "0": {
+                "action": "UseSymbol",
+                "args": {
+                    "type_block": ["multi_start", "data_to_save"]
+                },
+                "ast_context": []
+            }
+        },
+        "XGroupCreateconsumerRule1->elem3": {
+            "0": {
+                "action": "DefineSymbol",
+                "args": {
+                    "type": "xgroup_consumername_of_key_{.lsib(2)@text}_group_{.lsib(1)@text}"
+                },
+                "ast_context": []
+            }
+        },
+        "XGroupDelconsumerRule1->elem3": {
+            "0": {
+                "action": "InvalidateSymbol",
+                "args": {
+                    "type": "xgroup_consumername_of_key_{.lsib(2)@text}_group_{.lsib(1)@text}"
+                },
+                "ast_context": []
+            }
+        },
+        "XGroupCreateRule2->elem": {
+            "0": {
+                "action": "DefineSymbol",
+                "args": {
+                    "type": "xgroup_groupname_of_key_{.parent.lsib(1)@text}"
+                },
+                "ast_context": []
+            }
+        },
+        "XGroupDestroyRule2->elem": {
+            "0": {
+                "action": "InvalidateSymbol",
+                "args": {
+                    "type": "xgroup_groupname_of_key_{.parent.lsib(1)@text}"
+                },
+                "ast_context": []
+            }
+        }
+    },
+    "others": {
+        "token_sep": " ",
+        "replace_boundary_type": "prog",
+        "removable_types": [
+            [
+                "prog",
+                [
+                    "NEWLINE"
+                ]
+            ]
+        ],
+        "insertable_types": [
+            [
+                "prog",
+                "prog",
+                "before",
+                "\n"
+            ],
+            [
+                "prog",
+                "prog",
+                "after",
+                "\n"
+            ]
+        ],
+        "expose_types": [
+            "NEWLINE",
+            "progs",
+            "prog",
+            "IDENT"
+        ]
+    }
+}

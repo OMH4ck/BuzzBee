@@ -1,0 +1,2 @@
+set mykey hello
+get mykey

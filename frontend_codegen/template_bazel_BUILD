@@ -1,0 +1,43 @@
+
+cc_library(
+  name = "##grammar##_frontend",
+  srcs = glob(["*.cc","*.cpp"]),
+  hdrs = glob(["*.h"]),
+  copts = [
+    "-g",
+    "-std=c++2a",
+    "-I$(GENDIR)/src",
+    "-Wno-parentheses" # Suppress compilers complaints about the ANTLR4 generated cpp parsers
+  ],
+  linkopts = ["-lpthread"],
+  #linkstatic = 1,
+  visibility = ["//visibility:public"],
+  deps = [
+    "//src/core:ir",
+    "//src/core:mutator",
+    "//src/core:symbol_analysis",
+    "@com_google_absl//absl/container:flat_hash_map",
+  ],
+)
+
+
+cc_binary(
+  name = "##grammar##_frontend_dyn",
+  srcs = glob(["*.cc","*.cpp","*.h"]),
+  copts = [
+    "-g",
+    "-std=c++2a",
+    "-I$(GENDIR)/src",
+    "-Wno-parentheses" # Suppress compilers complaints about the ANTLR4 generated cpp parsers
+  ],
+  linkopts = ["-lpthread"],
+  linkshared = True,
+  linkstatic = 1,
+  visibility = ["//visibility:public"],
+  deps = [
+    "//src/core:ir",
+    "//src/core:mutator",
+    "//src/core:symbol_analysis",
+    "@com_google_absl//absl/container:flat_hash_map",
+  ],
+)
