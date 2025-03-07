@@ -14,11 +14,12 @@ python3 ./scripts/build_utils/oneshot.py --grammar=XXXParser.g4 --lexer=XXXLexer
 import argparse
 import os
 import subprocess
+import hashlib
 
 SCRIPT_PATH = os.path.dirname(os.path.realpath(__file__))
 REPO_ROOT = SCRIPT_PATH + "/../../"
 IMG_NAME = "buzzbeebuild"
-CONTAINER_NAME = f"{IMG_NAME}_container"
+CONTAINER_NAME = f"{IMG_NAME}_container_" + hashlib.sha256(os.path.realpath(__file__).encode()).hexdigest()[:12]
 
 
 def run_cmd(cmd, check=True):
